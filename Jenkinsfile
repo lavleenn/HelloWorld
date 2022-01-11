@@ -1,9 +1,9 @@
 node {
     def app
 
-    stage('Clone repository') {
+    stage('Build image') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        app = docker.build("HelloWorld")
     }
 }
