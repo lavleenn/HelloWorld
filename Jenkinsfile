@@ -1,9 +1,11 @@
-node {
+pipeline {
     def app
-
+    stages{
     stage('Build image') {
         /* Let's make sure we have the repository cloned to our workspace */
-
-        app = docker.build("helloworld")
+        steps{
+            app = docker.build("helloworld")
+        }
+    }
     }
 }
