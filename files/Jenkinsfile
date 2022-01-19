@@ -8,5 +8,13 @@ pipeline {
          script {app = docker.build("helloworld")}
         }
     }
+     stage('Test image'){
+      steps{
+       script{
+        app.inside{
+          sh'echo $CATALINA_HOME'
+        }
+       }
+      }
     }
 }
