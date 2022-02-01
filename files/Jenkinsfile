@@ -3,18 +3,7 @@ pipeline {
     agent any
     stages{
     stage('Build image') {
-        /* Let's make sure we have the repository cloned to our workspace */
-        steps{
-         script {app = docker.build("helloworld")}
-        }
+        checkout scm
     }
-     stage('Test image'){
-      steps{
-       script{
-        app.inside{
-          sh'echo $CATALINA_HOME'
-        }
-       }
-      }
-    }
+   } 
 }
