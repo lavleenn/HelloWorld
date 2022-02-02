@@ -2,7 +2,7 @@
 pipeline {
     agent any
     stages{
-    stage('Build image') {
+    stage('Checkout Master') {
      steps{
         checkout scm
      }
